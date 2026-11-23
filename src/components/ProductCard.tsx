@@ -11,7 +11,7 @@ export function ProductCard({ product }: { product: Product }) {
         <SmartImage
           src={product.images[0]}
           alt={product.name}
-          className="aspect-[4/5] w-full transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+          className="aspect-[4/5] w-full object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
         />
         <span className="absolute left-3 top-3 bg-cream/95 px-2.5 py-1 text-[0.62rem] font-medium tracking-[0.2em] text-ink">
           {product.tag}

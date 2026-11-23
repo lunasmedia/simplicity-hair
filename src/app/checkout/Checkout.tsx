@@ -91,7 +91,7 @@ export function Checkout() {
         <ul className="divide-y divide-line">
           {items.map((i) => (
             <li key={i.key} className="flex gap-4 py-4">
-              <SmartImage src={i.image} alt={i.name} className="h-20 w-16" />
+              <SmartImage src={i.image} alt={i.name} className="h-20 w-16 object-top" />
               <div className="flex-1 text-sm">
                 <p className="font-display text-lg leading-tight">{i.name} × {i.qty}</p>
                 <p className="text-xs text-muted">{Object.values(i.options).join(" · ")}</p>

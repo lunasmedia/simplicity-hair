@@ -1,4 +1,8 @@
-import { images } from "./images";
+import { asset } from "@/lib/format";
+
+// Shop photography reuses the studio shoot in /public/images
+const photo = (n: number) => asset(`/images/portfolio/${String(n).padStart(2, "0")}.jpg`);
+const hero = asset("/images/hero.jpg");
 
 export type OptionValue = { label: string; priceDelta: number };
 export type ProductOption = {
@@ -39,7 +43,7 @@ export const products: Product[] = [
     tag: "CUSTOM MADE",
     category: "Custom units",
     price: 450,
-    images: [images.teyana, images.teyana2, images.studio],
+    images: [photo(5), photo(12), photo(6)],
     short: "Soft, voluminous layers with a natural hairline.",
     description:
       "Our signature Teyana unit is constructed by hand in the studio to your head measurements, then cut and styled with soft face-framing layers. Every unit is pre-plucked, bleached and ready to wear.",
@@ -67,7 +71,7 @@ export const products: Product[] = [
     tag: "CUSTOM MADE",
     category: "Custom units",
     price: 375,
-    images: [images.rose, images.rose2, images.styling],
+    images: [photo(7), hero],
     short: "Sleek body wave with effortless movement.",
     description:
       "The Rose unit is our everyday luxury — a lightweight body wave that holds its shape and moves beautifully. Custom built and finished with a flawless melt.",
@@ -103,7 +107,7 @@ export const products: Product[] = [
     tag: "CUSTOM MADE",
     category: "Custom units",
     price: 450,
-    images: [images.toni, images.toni2, images.studio2],
+    images: [photo(1), photo(3), photo(10)],
     short: "A bold, precision-cut pixie, tailored to you.",
     description:
       "The Toni pixie is precision cut in the chair to suit your face shape. Short, chic and confident — with a hairline so natural it reads as your own.",
@@ -132,7 +136,7 @@ export const products: Product[] = [
     tag: "FULL LACE HD",
     category: "Full lace",
     price: 450,
-    images: [images.ashe, images.ashe2, images.styling],
+    images: [photo(8), photo(2)],
     short: "Full HD lace for complete versatility.",
     description:
       "Ashe Luxe is built on full HD lace so you can part anywhere and wear it up. Our most versatile unit, finished to an undetectable melt.",
@@ -167,7 +171,7 @@ export const products: Product[] = [
     tag: "CUSTOM MADE",
     category: "Custom units",
     price: 320,
-    images: [images.nia, images.p1],
+    images: [photo(4), photo(9)],
     short: "A blunt, glossy bob that sits just right.",
     description:
       "Nia is a classic blunt bob, cut sharp and finished glossy. Easy to wear, easy to love.",
@@ -189,7 +193,7 @@ export const products: Product[] = [
     tag: "CUSTOM MADE",
     category: "Custom units",
     price: 420,
-    images: [images.amara, images.p2],
+    images: [photo(11), photo(9)],
     short: "Defined, bouncy curls with real volume.",
     description:
       "Amara is a full, defined curl pattern that keeps its bounce. Custom made and shaped to frame your face.",
@@ -211,7 +215,7 @@ export const products: Product[] = [
     tag: "ESSENTIALS",
     category: "Accessories",
     price: 35,
-    images: [images.kit, images.p3],
+    images: [hero, photo(2)],
     short: "Everything you need to keep your unit fresh.",
     description:
       "The products from your chair, ready for home: sulphate-free shampoo, conditioning mask, lightweight serum and a wide-tooth comb.",

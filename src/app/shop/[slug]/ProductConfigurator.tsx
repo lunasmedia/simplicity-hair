@@ -56,12 +56,12 @@ export function ProductConfigurator({ slug }: { slug: string }) {
               onClick={() => setActive(i)}
               className={`w-20 shrink-0 border transition sm:w-full ${active === i ? "border-ink" : "border-transparent opacity-70 hover:opacity-100"}`}
             >
-              <SmartImage src={src} alt="" className="aspect-[4/5] w-full" />
+              <SmartImage src={src} alt="" className="aspect-[4/5] w-full object-top" />
             </button>
           ))}
         </div>
         <div className="relative order-1 sm:order-2">
-          <SmartImage key={active} src={product.images[active]} alt={`${product.name} — image ${active + 1}`} eager className="aspect-[4/5] w-full animate-fade-up" />
+          <SmartImage key={active} src={product.images[active]} alt={`${product.name} — image ${active + 1}`} eager className="aspect-[4/5] w-full object-top animate-fade-up" />
           <span className="absolute left-4 top-4 bg-cream/95 px-3 py-1 text-[0.65rem] font-medium tracking-[0.2em]">{product.tag}</span>
         </div>
       </div>
