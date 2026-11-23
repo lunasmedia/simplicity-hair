@@ -3,6 +3,7 @@ import { site } from "@/data/site";
 import { images } from "@/data/images";
 import { portfolio } from "@/data/portfolio";
 import { SmartImage } from "@/components/SmartImage";
+import { HeroMobileSlides } from "@/components/HeroMobileSlides";
 import { SectionHeading } from "@/components/ui";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { SignatureServices } from "@/components/SignatureServices";
@@ -13,7 +14,7 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
-        {/* Portrait photo on phones (below 768px), group photo on larger screens */}
+        {/* Group photo on tablet/desktop; on phones a portrait slideshow (first slide here, the rest in HeroMobileSlides) */}
         <picture>
           <source media="(max-width: 767px)" srcSet={images.heroMobile} />
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -24,6 +25,7 @@ export default function Home() {
             className="absolute inset-0 -z-10 h-full w-full bg-sand object-cover object-top"
           />
         </picture>
+        <HeroMobileSlides first={images.heroMobile} slides={images.heroMobileSlides} />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/80 via-ink/35 to-ink/10" />
         <div className="container-x flex min-h-[calc(100svh-5rem)] flex-col justify-end pb-16 pt-32 sm:pb-24">
           <p className="eyebrow mb-6 animate-fade-up text-cream/80">London Hair Studio · UK Delivery</p>

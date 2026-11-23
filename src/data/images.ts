@@ -9,6 +9,7 @@ const u = (id: string, w = 1200) =>
 export const images = {
   hero: asset("/images/hero.jpg"),
   heroMobile: asset("/images/hero-mobile.jpg"),
+  heroMobileSlides: [2, 3, 4, 5, 6].map((n) => asset(`/images/hero-mobile-${n}.jpg`)),
   studio: asset("/images/studio.jpg"),
   studio2: u("photo-1562322140-8baeececf3df", 1600),
 };
