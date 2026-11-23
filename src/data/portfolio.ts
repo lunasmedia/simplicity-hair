@@ -1,4 +1,3 @@
-import { images } from "./images";
 import { asset } from "@/lib/format";
 
 const photo = (n: number) => asset(`/images/portfolio/${String(n).padStart(2, "0")}.jpg`);
@@ -24,8 +23,8 @@ export const portfolio: PortfolioItem[] = [
   { id: "8", title: "Laid Edges", category: "Custom units", image: photo(8), caption: "Side-part unit with detailed, laid baby hairs." },
   { id: "9", title: "Sweeping Fringe", category: "Wig installs", image: photo(9), caption: "Short unit with a full, sweeping side fringe." },
   { id: "10", title: "Pixie Polish", category: "Colour", image: photo(10), caption: "Tousled pixie, finished with a glossy shine." },
-  { id: "11", title: "Soft Layers", category: "Styling", image: images.teyana2, caption: "Layered cut and blowout." },
-  { id: "12", title: "Sleek Finish", category: "Wig installs", image: images.toni2, caption: "Middle part, bone straight finish." },
+  { id: "11", title: "Middle Part Crop", category: "Styling", image: photo(11), caption: "Sleek middle-part crop with a soft, curved fringe." },
+  { id: "12", title: "Textured Pixie II", category: "Wig installs", image: photo(12), caption: "Tousled pixie install with a natural, lived-in texture." },
 ];
 
 export const portfolioCategories: PortfolioCategory[] = ["Wig installs", "Custom units", "Styling", "Colour"];
