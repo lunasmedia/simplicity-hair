@@ -3,7 +3,7 @@ import { site } from "@/data/site";
 import { images } from "@/data/images";
 import { portfolio } from "@/data/portfolio";
 import { SmartImage } from "@/components/SmartImage";
-import { HeroSlides, HERO_BG, HERO_FG } from "@/components/HeroSlides";
+import { HeroSlides, HERO_FG } from "@/components/HeroSlides";
 import { SectionHeading } from "@/components/ui";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { SignatureServices } from "@/components/SignatureServices";
@@ -17,13 +17,7 @@ export default function Home() {
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
         {/* First hero photo, rendered on the server so it shows instantly.
-            Phones get the portrait photo, larger screens the group photo.
-            On large screens a blurred copy fills the space around the "scaled out" photo. */}
-        <picture>
-          <source media="(max-width: 767px)" srcSet={images.heroMobile} />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={images.hero} alt="" aria-hidden className={`absolute inset-0 -z-10 ${HERO_BG}`} />
-        </picture>
+            Phones get the portrait photo, larger screens the group photo. */}
         <picture>
           <source media="(max-width: 767px)" srcSet={images.heroMobile} />
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -31,7 +25,7 @@ export default function Home() {
             src={images.hero}
             alt="Simplicity clients wearing custom short units in the studio"
             fetchPriority="high"
-            className={`absolute inset-0 -z-10 bg-sand lg:bg-transparent ${HERO_FG}`}
+            className={`absolute inset-0 -z-10 bg-sand ${HERO_FG}`}
           />
         </picture>
         {/* The rest of each slideshow, added only on the matching screen size */}

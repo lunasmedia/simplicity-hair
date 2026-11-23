@@ -7,13 +7,10 @@ const SLIDE_MS = 700;
 
 /**
  * How a hero photo is drawn (shared with the server-rendered first slide in page.tsx):
- * - Phones / tablets: fills the hero, anchored to the top so heads stay in frame.
- * - Large screens (lg+): "scaled out" — the whole photo is shown with headroom above,
- *   and a soft blurred copy of the same photo fills the space around it.
+ * fills the hero edge to edge, anchored to the top so the top of the photo
+ * (hair and heads) is never cropped — any trimming happens at the bottom.
  */
-export const HERO_FG =
-  "h-full w-full object-cover object-top lg:object-contain lg:object-bottom lg:pt-[7vh]";
-export const HERO_BG = "hidden h-full w-full scale-110 object-cover blur-2xl brightness-90 lg:block";
+export const HERO_FG = "h-full w-full object-cover object-top";
 
 /**
  * Hero slideshow with a "push" transition: each new photo slides in from the
@@ -96,12 +93,8 @@ export function HeroSlides({
           }}
         >
           {strip.map((src, i) => (
-            <div key={`${src}-${i}`} className="relative h-full w-full shrink-0 overflow-hidden bg-sand lg:bg-night">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" decoding="async" className={`absolute inset-0 ${HERO_BG}`} />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" decoding="async" className={`relative ${HERO_FG}`} />
-            </div>
+            // eslint-disable-next-line @next/next/no-img-element
+            <img key={`${src}-${i}`} src={src} alt="" decoding="async" className={`shrink-0 bg-sand ${HERO_FG}`} />
           ))}
         </div>
       </div>
