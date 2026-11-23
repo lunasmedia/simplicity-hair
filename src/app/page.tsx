@@ -15,9 +15,9 @@ export default function Home() {
       <section className="relative isolate overflow-hidden">
         <SmartImage
           src={images.hero}
-          alt="A stylist curling a client's hair in the Simplicity studio"
+          alt="Three clients wearing Simplicity custom short units, seated together on a white sofa"
           eager
-          className="absolute inset-0 -z-10 h-full w-full"
+          className="absolute inset-0 -z-10 h-full w-full object-[center_30%]"
         />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/80 via-ink/35 to-ink/10" />
         <div className="container-x flex min-h-[calc(100svh-5rem)] flex-col justify-end pb-16 pt-32 sm:pb-24">
