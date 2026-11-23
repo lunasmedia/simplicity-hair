@@ -23,7 +23,7 @@ export function SmartImage({
       <div
         role="img"
         aria-label={alt}
-        className={`flex items-end bg-gradient-to-br from-linen via-sand to-[#d9c6b0] p-5 ${className}`}
+        className={`flex items-end bg-gradient-to-br from-linen via-sand to-linen p-5 ${className}`}
       >
         <span className="font-display text-lg italic text-cocoa/70">{alt}</span>
       </div>

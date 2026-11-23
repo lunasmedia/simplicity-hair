@@ -7,7 +7,7 @@ export function Logo({ light = false, onClick }: { light?: boolean; onClick?: ()
       href="/"
       onClick={onClick}
       aria-label="Simplicity Hair & Beauty — home"
-      className={`group inline-flex items-center gap-2.5 sm:gap-3 ${light ? "text-cream" : "text-ink"}`}
+      className={`group inline-flex items-center gap-2.5 sm:gap-3 ${light ? "text-ivory" : "text-ink"}`}
     >
       {/* SH monogram (decorative — the link's aria-label names it) */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -24,7 +24,7 @@ export function Logo({ light = false, onClick }: { light?: boolean; onClick?: ()
         </span>
         <span
           className={`mt-1 text-[0.5rem] font-medium tracking-[0.38em] sm:text-[0.58rem] sm:tracking-[0.42em] ${
-            light ? "text-cream/70" : "text-muted"
+            light ? "text-ivory/70" : "text-muted"
           }`}
         >
           HAIR &amp; BEAUTY

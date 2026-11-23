@@ -104,7 +104,7 @@ export function HeroMobileSlides({ slides, first }: { slides: string[]; first: s
           >
             <span
               className={`block h-1.5 rounded-full transition-all duration-300 ${
-                active === i ? "w-5 bg-cream" : "w-1.5 bg-cream/50"
+                active === i ? "w-5 bg-ivory" : "w-1.5 bg-ivory/50"
               }`}
             />
           </button>

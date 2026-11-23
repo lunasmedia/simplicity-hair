@@ -52,7 +52,7 @@ export function CartDrawer() {
     >
       <div
         onClick={close}
-        className={`absolute inset-0 bg-ink/40 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
+        className={`absolute inset-0 bg-night/50 transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0"}`}
       />
       <div
         ref={panelRef}

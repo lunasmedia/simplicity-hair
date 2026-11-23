@@ -17,7 +17,7 @@ export function ContactForm() {
 
   if (sent) {
     return (
-      <div className="border border-line bg-white/50 p-10" role="status">
+      <div className="border border-line bg-surface/50 p-10" role="status">
         <p className="eyebrow">Message sent</p>
         <p className="display mt-4 text-4xl">Thank you — we&apos;ll be in touch soon.</p>
         <button type="button" className="btn-outline mt-8" onClick={() => { setSent(false); setForm({ name: "", email: "", subject: "General enquiry", message: "" }); }}>
@@ -28,7 +28,7 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={submit} className="grid gap-5 border border-line bg-white/40 p-7 sm:grid-cols-2 sm:p-10">
+    <form onSubmit={submit} className="grid gap-5 border border-line bg-surface/40 p-7 sm:grid-cols-2 sm:p-10">
       <div>
         <label htmlFor="c-name" className="label">Name</label>
         <input id="c-name" required autoComplete="name" className="field" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />

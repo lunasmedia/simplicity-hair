@@ -113,7 +113,7 @@ export function VideoReel({ clips }: { clips: Clip[] }) {
                 }}
                 aria-label={`Play ${clip.label}`}
                 aria-current={isActive ? "true" : undefined}
-                className={`group relative block w-full overflow-hidden bg-ink transition duration-500 ${
+                className={`group relative block w-full overflow-hidden bg-night transition duration-500 ${
                   isActive ? "opacity-100" : "opacity-55 hover:opacity-85"
                 }`}
               >
@@ -138,16 +138,16 @@ export function VideoReel({ clips }: { clips: Clip[] }) {
                   className="aspect-[9/16] w-full object-cover"
                 />
                 {/* Progress bar on the playing clip */}
-                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-cream/25" aria-hidden>
+                <span className="absolute inset-x-0 bottom-0 h-0.5 bg-ivory/25" aria-hidden>
                   <span
-                    className="block h-full origin-left bg-cream"
+                    className="block h-full origin-left bg-ivory"
                     style={{ transform: `scaleX(${isActive ? progress : 0})` }}
                   />
                 </span>
                 {!isActive && (
                   <span
                     aria-hidden
-                    className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-cream/85 text-ink opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100"
+                    className="absolute left-1/2 top-1/2 flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-ivory/85 text-night opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100"
                   >
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z" /></svg>
                   </span>

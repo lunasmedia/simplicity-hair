@@ -17,7 +17,13 @@ export const metadata: Metadata = {
     "London hair studio specialising in custom wigs, wig installs and hair styling. UK delivery and online appointment booking.",
 };
 
-export const viewport: Viewport = { themeColor: "#f8f4ee" };
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8f4ee" },
+    { media: "(prefers-color-scheme: dark)", color: "#141110" },
+  ],
+  colorScheme: "light dark",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (

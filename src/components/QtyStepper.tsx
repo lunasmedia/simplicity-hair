@@ -17,7 +17,7 @@ export function QtyStepper({
 }) {
   const h = size === "sm" ? "h-8 w-8 text-sm" : "h-12 w-12 text-lg";
   return (
-    <div role="group" aria-label={label} className="inline-flex items-center border border-line bg-white/50">
+    <div role="group" aria-label={label} className="inline-flex items-center border border-line bg-surface/50">
       <button
         type="button"
         className={`${h} transition hover:bg-sand disabled:opacity-40`}

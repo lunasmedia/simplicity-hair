@@ -33,7 +33,7 @@ export function Checkout() {
   if (done) {
     return (
       <section className="container-x py-16">
-        <div className="max-w-2xl border border-line bg-white/50 p-10" role="status">
+        <div className="max-w-2xl border border-line bg-surface/50 p-10" role="status">
           <p className="eyebrow">Order request received</p>
           <h2 className="display mt-4 text-5xl">Thank you, {done.name.split(" ")[0]}.</h2>
           <p className="mt-5 leading-relaxed text-ink-soft">

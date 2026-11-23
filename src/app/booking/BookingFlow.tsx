@@ -148,7 +148,7 @@ export function BookingFlow() {
                             setStep(1);
                           }}
                           className={`flex flex-col border p-5 text-left transition hover:border-ink ${
-                            serviceId === s.id ? "border-ink bg-white" : "border-line bg-white/40"
+                            serviceId === s.id ? "border-ink bg-surface" : "border-line bg-surface/40"
                           }`}
                         >
                           <span className="flex w-full items-baseline justify-between gap-3">
@@ -188,7 +188,7 @@ export function BookingFlow() {
                       setTime(null);
                     }}
                     className={`flex w-16 shrink-0 flex-col items-center border py-3 transition ${
-                      sel ? "border-ink bg-ink text-cream" : "border-line bg-white/40 hover:border-ink"
+                      sel ? "border-ink bg-ink text-cream" : "border-line bg-surface/40 hover:border-ink"
                     }`}
                   >
                     <span className="text-[0.6rem] uppercase tracking-[0.16em] opacity-70">
@@ -215,7 +215,7 @@ export function BookingFlow() {
                       aria-pressed={time === s.time}
                       onClick={() => setTime(s.time)}
                       className={`border py-3 text-sm tabular-nums transition disabled:cursor-not-allowed disabled:line-through disabled:opacity-35 ${
-                        time === s.time ? "border-ink bg-ink text-cream" : "border-line bg-white/40 hover:border-ink"
+                        time === s.time ? "border-ink bg-ink text-cream" : "border-line bg-surface/40 hover:border-ink"
                       }`}
                     >
                       {s.time}
@@ -260,7 +260,7 @@ export function BookingFlow() {
                 <textarea id="b-notes" rows={4} className="field" placeholder="Hair goals, inspiration, unit you're bringing…" value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} />
               </div>
               <label className="flex items-start gap-3 text-sm text-ink-soft sm:col-span-2">
-                <input type="checkbox" required checked={form.agree} onChange={(e) => setForm({ ...form, agree: e.target.checked })} className="mt-1 h-4 w-4 accent-[#1d1916]" />
+                <input type="checkbox" required checked={form.agree} onChange={(e) => setForm({ ...form, agree: e.target.checked })} className="mt-1 h-4 w-4 accent-ink" />
                 <span>
                   I have read and agree to the{" "}
                   <Link href="/client-agreement" target="_blank" className="link-underline text-ink">
@@ -282,7 +282,7 @@ export function BookingFlow() {
         )}
 
         {step === 3 && confirmed && (
-          <div className="animate-fade-up border border-line bg-white/50 p-8 sm:p-12">
+          <div className="animate-fade-up border border-line bg-surface/50 p-8 sm:p-12">
             <p className="eyebrow">Booking received</p>
             <h2 ref={headingRef} tabIndex={-1} className="display mt-4 text-5xl outline-none">
               Thank you, {confirmed.name.split(" ")[0]}.

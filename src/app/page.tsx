@@ -28,23 +28,23 @@ export default function Home() {
           />
         </picture>
         <HeroMobileSlides first={images.heroMobile} slides={images.heroMobileSlides} />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/80 via-ink/35 to-ink/10" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-night/80 via-night/35 to-night/10" />
         <div className="container-x flex min-h-[calc(100svh-5rem)] flex-col justify-end pb-16 pt-32 sm:pb-24">
-          <p className="eyebrow mb-6 animate-fade-up text-cream/80">London Hair Studio · UK Delivery</p>
+          <p className="eyebrow mb-6 animate-fade-up text-ivory/80">London Hair Studio · UK Delivery</p>
           <h1
-            className="display max-w-4xl animate-fade-up text-6xl text-cream sm:text-7xl lg:text-8xl"
+            className="display max-w-4xl animate-fade-up text-6xl text-ivory sm:text-7xl lg:text-8xl"
             style={{ animationDelay: "80ms" }}
           >
             Hair, Made to <em className="font-normal">Reflect You.</em>
           </h1>
           <p
-            className="mt-7 max-w-xl animate-fade-up text-lg leading-relaxed text-cream/85"
+            className="mt-7 max-w-xl animate-fade-up text-lg leading-relaxed text-ivory/85"
             style={{ animationDelay: "160ms" }}
           >
             {site.mission}
           </p>
           <div className="mt-10 flex flex-wrap gap-3 animate-fade-up" style={{ animationDelay: "240ms" }}>
-            <Link href="/booking" className="btn bg-cream text-ink hover:bg-white">
+            <Link href="/booking" className="btn bg-ivory text-night hover:bg-white">
               Book an appointment
             </Link>
             <Link href="/shop" className="btn-light">
@@ -136,9 +136,9 @@ export default function Home() {
                     i === 0 ? "aspect-square h-full" : "aspect-square"
                   }`}
                 />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
-                  <p className="text-[0.65rem] uppercase tracking-[0.2em] text-cream/75">{item.category}</p>
-                  <p className="font-display text-xl text-cream">{item.title}</p>
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night/70 to-transparent p-4 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+                  <p className="text-[0.65rem] uppercase tracking-[0.2em] text-ivory/75">{item.category}</p>
+                  <p className="font-display text-xl text-ivory">{item.title}</p>
                 </div>
               </Link>
             ))}
@@ -166,12 +166,12 @@ export default function Home() {
 
       {/* CTA band */}
       <section className="container-x">
-        <div className="relative isolate overflow-hidden bg-ink px-8 py-20 text-center text-cream sm:px-16">
+        <div className="relative isolate overflow-hidden bg-night px-8 py-20 text-center text-ivory sm:px-16">
           <SmartImage src={images.studio2} alt="" className="absolute inset-0 -z-10 h-full w-full opacity-25" />
-          <p className="eyebrow mb-5 text-cream/70">Ready when you are</p>
+          <p className="eyebrow mb-5 text-ivory/70">Ready when you are</p>
           <h2 className="display mx-auto max-w-2xl text-4xl sm:text-6xl">Your chair is waiting.</h2>
-          <p className="mx-auto mt-5 max-w-md text-cream/75">Book online in under a minute — choose your service, pick a time, done.</p>
-          <Link href="/booking" className="btn mt-9 bg-cream text-ink hover:bg-white">
+          <p className="mx-auto mt-5 max-w-md text-ivory/75">Book online in under a minute — choose your service, pick a time, done.</p>
+          <Link href="/booking" className="btn mt-9 bg-ivory text-night hover:bg-white">
             Book an appointment
           </Link>
         </div>

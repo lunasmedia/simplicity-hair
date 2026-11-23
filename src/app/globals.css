@@ -13,6 +13,33 @@
   --color-muted: #7d7166;
   --color-cocoa: #6e4f3a;
   --color-clay: #a87a55;
+  /* Raised surfaces: form fields, cards, selected options */
+  --color-surface: #ffffff;
+
+  /* Fixed colours that never switch with dark mode — used for text and
+     overlays on photos, the footer and other always-dark areas. */
+  --color-night: #1d1916;
+  --color-ivory: #f8f4ee;
+}
+
+/* Dark mode: follows the device's light/dark setting automatically. */
+:root {
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --color-cream: #141110;
+    --color-sand: #1c1815;
+    --color-linen: #2a2420;
+    --color-line: #3a322b;
+    --color-ink: #f2ebe2;
+    --color-ink-soft: #cdc2b6;
+    --color-muted: #9a8d80;
+    --color-cocoa: #d9b48f;
+    --color-clay: #c99b72;
+    --color-surface: #1f1a17;
+  }
 }
 
 html {
@@ -84,7 +111,7 @@ video {
 }
 
 @utility btn-light {
-    @apply btn border border-cream/80 text-cream hover:bg-cream hover:text-ink;
+    @apply btn border border-ivory/80 text-ivory hover:bg-ivory hover:text-night;
 }
 
 @utility link-underline {
@@ -92,7 +119,7 @@ video {
 }
 
 @utility field {
-    @apply w-full border border-line bg-white/60 px-4 py-3 text-sm text-ink placeholder:text-muted/70 transition focus:border-ink focus:bg-white focus:outline-none;
+    @apply w-full border border-line bg-surface/60 px-4 py-3 text-sm text-ink placeholder:text-muted/70 transition focus:border-ink focus:bg-surface focus:outline-none;
 }
 
 @utility label {

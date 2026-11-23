@@ -50,9 +50,9 @@ export function PortfolioGallery() {
                 alt={item.caption}
                 className={`w-full object-top transition-transform duration-700 group-hover:scale-[1.03] ${i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-square" : "aspect-[4/5]"}`}
               />
-              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
-                <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-cream/75">{item.category}</span>
-                <span className="block font-display text-xl text-cream">{item.title}</span>
+              <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night/70 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
+                <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-ivory/75">{item.category}</span>
+                <span className="block font-display text-xl text-ivory">{item.title}</span>
               </span>
             </button>
           </li>
@@ -72,23 +72,23 @@ export function PortfolioGallery() {
       </div>
 
       {current && (
-        <div role="dialog" aria-modal="true" aria-label={current.title} className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 p-4 animate-fade-up">
+        <div role="dialog" aria-modal="true" aria-label={current.title} className="fixed inset-0 z-50 flex items-center justify-center bg-night/90 p-4 animate-fade-up">
           <button type="button" className="absolute inset-0 cursor-default" aria-hidden tabIndex={-1} onClick={() => setOpen(null)} />
           <figure className="relative z-10 flex max-h-full max-w-full flex-col items-center">
             <SmartImage src={current.image} alt={current.caption} eager className="block h-auto max-h-[78vh] w-auto max-w-[calc(100vw-6rem)] bg-transparent object-contain" />
-            <figcaption className="mt-4 flex w-full max-w-2xl flex-col gap-1 text-cream sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+            <figcaption className="mt-4 flex w-full max-w-2xl flex-col gap-1 text-ivory sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
               <span>
-                <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-cream/60">{current.category}</span>
+                <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-ivory/60">{current.category}</span>
                 <span className="font-display text-2xl">{current.title}</span>
               </span>
-              <span className="text-sm text-cream/70">{current.caption}</span>
+              <span className="text-sm text-ivory/70">{current.caption}</span>
             </figcaption>
           </figure>
-          <button ref={closeRef} type="button" onClick={() => setOpen(null)} aria-label="Close" className="absolute right-4 top-4 z-10 p-2 text-cream">
+          <button ref={closeRef} type="button" onClick={() => setOpen(null)} aria-label="Close" className="absolute right-4 top-4 z-10 p-2 text-ivory">
             <svg aria-hidden width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4"><path d="M6 6l12 12M18 6 6 18" /></svg>
           </button>
-          <button type="button" onClick={() => setOpen((i) => ((i ?? 0) - 1 + list.length) % list.length)} aria-label="Previous image" className="absolute left-2 top-1/2 z-10 -translate-y-1/2 p-3 text-3xl text-cream/80 hover:text-cream">‹</button>
-          <button type="button" onClick={() => setOpen((i) => ((i ?? 0) + 1) % list.length)} aria-label="Next image" className="absolute right-2 top-1/2 z-10 -translate-y-1/2 p-3 text-3xl text-cream/80 hover:text-cream">›</button>
+          <button type="button" onClick={() => setOpen((i) => ((i ?? 0) - 1 + list.length) % list.length)} aria-label="Previous image" className="absolute left-2 top-1/2 z-10 -translate-y-1/2 p-3 text-3xl text-ivory/80 hover:text-ivory">‹</button>
+          <button type="button" onClick={() => setOpen((i) => ((i ?? 0) + 1) % list.length)} aria-label="Next image" className="absolute right-2 top-1/2 z-10 -translate-y-1/2 p-3 text-3xl text-ivory/80 hover:text-ivory">›</button>
         </div>
       )}
     </section>
