@@ -7,6 +7,8 @@ import { HeroMobileSlides } from "@/components/HeroMobileSlides";
 import { SectionHeading } from "@/components/ui";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { SignatureServices } from "@/components/SignatureServices";
+import { VideoReel } from "@/components/VideoReel";
+import { clips } from "@/data/videos";
 
 export default function Home() {
   const recent = portfolio.slice(0, 5);
@@ -146,6 +148,19 @@ export default function Home() {
               View full portfolio
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Video reel */}
+      <section className="border-t border-line py-24 sm:py-32" aria-labelledby="reel-heading">
+        <div className="container-x">
+          <div className="mb-10 max-w-2xl md:mb-12">
+            <p className="eyebrow mb-4">In motion</p>
+            <h2 id="reel-heading" className="display text-4xl sm:text-5xl">
+              Watch the work, <em className="font-normal">start to finish.</em>
+            </h2>
+          </div>
+          <VideoReel clips={clips} />
         </div>
       </section>
 

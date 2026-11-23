@@ -43,7 +43,8 @@ select,
   user-select: text;
   -webkit-touch-callout: default;
 }
-img {
+img,
+video {
   -webkit-user-drag: none;
   user-drag: none;
   pointer-events: none;
