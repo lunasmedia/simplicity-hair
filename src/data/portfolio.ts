@@ -14,7 +14,7 @@ export type PortfolioItem = {
 
 export const portfolio: PortfolioItem[] = [
   { id: "1", title: "Textured Pixie", category: "Custom units", image: photo(1), caption: "Textured pixie unit with a soft swept fringe." },
-  { id: "2", title: "Sleek Side Part", category: "Wig installs", image: photo(2), caption: "Slicked side-part install with a seamless hairline." },
+  { id: "2", title: "Sleek Side Part", category: "Wig installs", image: photo(13), caption: "Slicked side-part install with a seamless hairline." },
   { id: "3", title: "Tailored Pixie", category: "Styling", image: photo(3), caption: "Tousled pixie, styled for a sharp tailored look." },
   { id: "4", title: "Swept Pixie", category: "Custom units", image: photo(4), caption: "Custom pixie with a deep side part and sweeping fringe." },
   { id: "5", title: "Soft Crop", category: "Wig installs", image: photo(5), caption: "Short cropped unit, finished soft and natural." },
