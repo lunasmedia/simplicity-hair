@@ -3,7 +3,7 @@ import { site } from "@/data/site";
 import { images } from "@/data/images";
 import { portfolio } from "@/data/portfolio";
 import { SmartImage } from "@/components/SmartImage";
-import { HeroMobileSlides } from "@/components/HeroMobileSlides";
+import { HeroSlides, HERO_BG, HERO_FG } from "@/components/HeroSlides";
 import { SectionHeading } from "@/components/ui";
 import { FeaturedProducts } from "@/components/FeaturedProducts";
 import { SignatureServices } from "@/components/SignatureServices";
@@ -16,7 +16,14 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
-        {/* Group photo on tablet/desktop; on phones a portrait slideshow (first slide here, the rest in HeroMobileSlides) */}
+        {/* First hero photo, rendered on the server so it shows instantly.
+            Phones get the portrait photo, larger screens the group photo.
+            On large screens a blurred copy fills the space around the "scaled out" photo. */}
+        <picture>
+          <source media="(max-width: 767px)" srcSet={images.heroMobile} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={images.hero} alt="" aria-hidden className={`absolute inset-0 -z-10 ${HERO_BG}`} />
+        </picture>
         <picture>
           <source media="(max-width: 767px)" srcSet={images.heroMobile} />
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -24,10 +31,12 @@ export default function Home() {
             src={images.hero}
             alt="Simplicity clients wearing custom short units in the studio"
             fetchPriority="high"
-            className="absolute inset-0 -z-10 h-full w-full bg-sand object-cover object-top"
+            className={`absolute inset-0 -z-10 bg-sand lg:bg-transparent ${HERO_FG}`}
           />
         </picture>
-        <HeroMobileSlides first={images.heroMobile} slides={images.heroMobileSlides} />
+        {/* The rest of each slideshow, added only on the matching screen size */}
+        <HeroSlides query="(max-width: 767px)" first={images.heroMobile} slides={images.heroMobileSlides} label="Hero photos" />
+        <HeroSlides query="(min-width: 768px)" first={images.hero} slides={images.heroSlides} label="Hero photos" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-night/80 via-night/35 to-night/10" />
         <div className="container-x flex min-h-[calc(100svh-5rem)] flex-col justify-end pb-16 pt-32 sm:pb-24">
           <p className="eyebrow mb-6 animate-fade-up text-ivory/80">London Hair Studio · UK Delivery</p>

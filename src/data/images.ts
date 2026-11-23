@@ -8,6 +8,8 @@ const u = (id: string, w = 1200) =>
 
 export const images = {
   hero: asset("/images/hero-group.jpg"),
+  // Desktop/tablet hero slideshow: pushes between these after the first photo above.
+  heroSlides: [asset("/images/hero.jpg")],
   heroMobile: asset("/images/hero-mobile.jpg"),
   heroMobileSlides: [2, 3, 4, 5, 6].map((n) => asset(`/images/hero-mobile-${n}.jpg`)),
   studio: asset("/images/studio.jpg"),
