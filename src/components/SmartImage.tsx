@@ -37,7 +37,7 @@ export function SmartImage({
       loading={eager ? "eager" : "lazy"}
       decoding="async"
       onError={() => setFailed(true)}
-      className={`bg-sand object-cover ${className}`}
+      className={`bg-sand ${className.includes("object-contain") ? "" : "object-cover"} ${className}`}
     />
   );
 }

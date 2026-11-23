@@ -72,11 +72,11 @@ export function PortfolioGallery() {
       </div>
 
       {current && (
-        <div role="dialog" aria-modal="true" aria-label={current.title} className="fixed inset-0 z-50 flex items-center justify-center bg-ink/90 p-4 animate-fade-up">
+        <div role="dialog" aria-modal="true" aria-label={current.title} className="fixed inset-0 z-50 flex items-center justify-center bg-ink p-4 animate-fade-up">
           <button type="button" className="absolute inset-0 cursor-default" aria-hidden tabIndex={-1} onClick={() => setOpen(null)} />
-          <figure className="relative z-10 max-h-full w-full max-w-3xl">
-            <SmartImage src={current.image} alt={current.caption} eager className="max-h-[78vh] w-full object-contain" />
-            <figcaption className="mt-4 flex items-baseline justify-between gap-4 text-cream">
+          <figure className="relative z-10 flex max-h-full max-w-full flex-col items-center">
+            <SmartImage src={current.image} alt={current.caption} eager className="block h-auto max-h-[78vh] w-auto max-w-[calc(100vw-6rem)] bg-transparent object-contain" />
+            <figcaption className="mt-4 flex w-full max-w-2xl flex-col gap-1 text-cream sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
               <span>
                 <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-cream/60">{current.category}</span>
                 <span className="font-display text-2xl">{current.title}</span>
