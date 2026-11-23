@@ -8,6 +8,6 @@ const u = (id: string, w = 1200) =>
 
 export const images = {
   hero: asset("/images/hero.jpg"),
-  studio: u("photo-1521590832167-7bcbfaa6381f", 1600),
+  studio: asset("/images/studio.jpg"),
   studio2: u("photo-1562322140-8baeececf3df", 1600),
 };

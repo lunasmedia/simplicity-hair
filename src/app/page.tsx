@@ -59,7 +59,7 @@ export default function Home() {
       {/* Studio statement */}
       <section className="bg-sand/70">
         <div className="container-x grid items-center gap-12 py-24 md:grid-cols-2 md:gap-20">
-          <SmartImage src={images.studio} alt="Inside the Simplicity studio" className="aspect-[4/5] w-full" />
+          <SmartImage src={images.studio} alt="Client in profile showing a sleek side-part pixie with laid edges" className="aspect-[4/5] w-full object-top" />
           <div>
             <p className="eyebrow mb-5">The studio</p>
             <h2 className="display text-4xl sm:text-5xl">
