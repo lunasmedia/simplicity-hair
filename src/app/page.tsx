@@ -13,12 +13,17 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="relative isolate overflow-hidden">
-        <SmartImage
-          src={images.hero}
-          alt="Three clients wearing Simplicity custom short units, seated together on a white sofa"
-          eager
-          className="absolute inset-0 -z-10 h-full w-full object-top"
-        />
+        {/* Portrait photo on phones (below 768px), group photo on larger screens */}
+        <picture>
+          <source media="(max-width: 767px)" srcSet={images.heroMobile} />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={images.hero}
+            alt="Simplicity clients wearing custom short units in the studio"
+            fetchPriority="high"
+            className="absolute inset-0 -z-10 h-full w-full bg-sand object-cover object-top"
+          />
+        </picture>
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-ink/80 via-ink/35 to-ink/10" />
         <div className="container-x flex min-h-[calc(100svh-5rem)] flex-col justify-end pb-16 pt-32 sm:pb-24">
           <p className="eyebrow mb-6 animate-fade-up text-cream/80">London Hair Studio · UK Delivery</p>
