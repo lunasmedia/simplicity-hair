@@ -17,7 +17,7 @@ export default function ContactPage() {
         <div className="space-y-10">
           <div>
             <h2 className="eyebrow mb-3">Studio</h2>
-            <address className="font-display text-2xl not-italic leading-snug">
+            <address className="allow-copy font-display text-2xl not-italic leading-snug">
               {site.address.map((l) => (
                 <span key={l} className="block">{l}</span>
               ))}
@@ -26,7 +26,7 @@ export default function ContactPage() {
           </div>
           <div>
             <h2 className="eyebrow mb-3">Get in touch</h2>
-            <ul className="space-y-2 text-lg">
+            <ul className="allow-copy space-y-2 text-lg">
               <li><a href={`mailto:${site.email}`} className="link-underline">{site.email}</a></li>
               <li><a href={`tel:${site.phone.replace(/[^+\d]/g, "")}`} className="link-underline">{site.phone}</a></li>
               <li><a href={site.instagram} target="_blank" rel="noreferrer" className="link-underline">Instagram {site.instagramHandle}</a></li>

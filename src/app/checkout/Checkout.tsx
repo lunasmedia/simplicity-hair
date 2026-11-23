@@ -38,7 +38,7 @@ export function Checkout() {
           <h2 className="display mt-4 text-5xl">Thank you, {done.name.split(" ")[0]}.</h2>
           <p className="mt-5 leading-relaxed text-ink-soft">
             We&apos;ll email {done.email} shortly to confirm your measurements, finalise your options and send a secure
-            payment link. Reference <strong className="font-medium text-ink">{done.id.toUpperCase()}</strong>.
+            payment link. Reference <strong className="allow-copy font-medium text-ink">{done.id.toUpperCase()}</strong>.
           </p>
           <Link href="/shop" className="btn-primary mt-8">Continue shopping</Link>
         </div>

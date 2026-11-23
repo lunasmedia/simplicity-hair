@@ -293,7 +293,7 @@ export function BookingFlow() {
               <strong className="font-medium text-ink">{confirmed.time}</strong> has been received. We&apos;ll be in touch at{" "}
               {confirmed.email} to confirm and take your deposit.
             </p>
-            <p className="mt-4 text-xs uppercase tracking-[0.18em] text-muted">Reference {confirmed.id.toUpperCase()}</p>
+            <p className="allow-copy mt-4 text-xs uppercase tracking-[0.18em] text-muted">Reference {confirmed.id.toUpperCase()}</p>
             <div className="mt-10 flex flex-wrap gap-3">
               <button type="button" onClick={reset} className="btn-outline">
                 Book another
