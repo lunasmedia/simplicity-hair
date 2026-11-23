@@ -1,4 +1,7 @@
 import { images } from "./images";
+import { asset } from "@/lib/format";
+
+const photo = (n: number) => asset(`/images/portfolio/${String(n).padStart(2, "0")}.jpg`);
 
 export type PortfolioCategory = "Wig installs" | "Custom units" | "Styling" | "Colour";
 
@@ -11,11 +14,11 @@ export type PortfolioItem = {
 };
 
 export const portfolio: PortfolioItem[] = [
-  { id: "1", title: "Teyana, Ginger Black", category: "Custom units", image: images.teyana, caption: "Custom Teyana unit with soft face-framing layers." },
-  { id: "2", title: "HD Melt", category: "Wig installs", image: images.ashe, caption: "Full lace HD install, parted to the side." },
-  { id: "3", title: "Studio Curls", category: "Styling", image: images.styling, caption: "Wand curls finished in the chair." },
-  { id: "4", title: "Toni Pixie", category: "Custom units", image: images.toni, caption: "Precision-cut pixie, tapered nape." },
-  { id: "5", title: "Body Wave", category: "Wig installs", image: images.rose, caption: "Rose unit, glueless install." },
+  { id: "1", title: "Textured Pixie", category: "Custom units", image: photo(1), caption: "Textured pixie unit with a soft swept fringe." },
+  { id: "2", title: "Sleek Side Part", category: "Wig installs", image: photo(2), caption: "Slicked side-part install with a seamless hairline." },
+  { id: "3", title: "Tailored Pixie", category: "Styling", image: photo(3), caption: "Tousled pixie, styled for a sharp tailored look." },
+  { id: "4", title: "Swept Pixie", category: "Custom units", image: photo(4), caption: "Custom pixie with a deep side part and sweeping fringe." },
+  { id: "5", title: "Soft Crop", category: "Wig installs", image: photo(5), caption: "Short cropped unit, finished soft and natural." },
   { id: "6", title: "Honey Tones", category: "Colour", image: images.ashe2, caption: "Honey blonde colour on full lace." },
   { id: "7", title: "Silk Press", category: "Styling", image: images.p1, caption: "Glossy silk press on natural hair." },
   { id: "8", title: "Blunt Bob", category: "Custom units", image: images.nia, caption: "Nia bob, cut sharp and glossy." },

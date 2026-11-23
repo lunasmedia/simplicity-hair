@@ -123,7 +123,7 @@ export default function Home() {
                 <SmartImage
                   src={item.image}
                   alt={item.caption}
-                  className={`w-full transition-transform duration-700 group-hover:scale-[1.04] ${
+                  className={`w-full object-top transition-transform duration-700 group-hover:scale-[1.04] ${
                     i === 0 ? "aspect-square h-full" : "aspect-square"
                   }`}
                 />

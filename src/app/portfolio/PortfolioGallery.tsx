@@ -48,7 +48,7 @@ export function PortfolioGallery() {
               <SmartImage
                 src={item.image}
                 alt={item.caption}
-                className={`w-full transition-transform duration-700 group-hover:scale-[1.03] ${i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-square" : "aspect-[4/5]"}`}
+                className={`w-full object-top transition-transform duration-700 group-hover:scale-[1.03] ${i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-square" : "aspect-[4/5]"}`}
               />
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
                 <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-cream/75">{item.category}</span>
