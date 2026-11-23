@@ -36,6 +36,7 @@ export function Header() {
   const isActive = (href: string) => pathname === href || pathname.startsWith(href + "/");
 
   return (
+    <>
     <header
       className={`sticky top-0 z-40 border-b transition-colors duration-300 ${
         scrolled ? "border-line bg-cream/90 backdrop-blur-md" : "border-transparent bg-cream"
@@ -99,7 +100,10 @@ export function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
+    </header>
+
+      {/* Mobile menu: a sibling of <header>, not inside it. The header's backdrop blur
+          (when scrolled) would otherwise trap this fixed panel inside the header's box. */}
       <div
         id="mobile-menu"
         hidden={!menuOpen}
@@ -112,6 +116,7 @@ export function Header() {
                 <Link
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
+                  onClick={() => setMenuOpen(false)}
                   className="flex items-baseline justify-between border-b border-line py-5 font-display text-4xl"
                 >
                   {item.label}
@@ -120,11 +125,11 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <Link href="/booking" className="btn-primary mt-10 w-full">
+          <Link href="/booking" onClick={() => setMenuOpen(false)} className="btn-primary mt-10 w-full">
             Book an appointment
           </Link>
         </nav>
       </div>
-    </header>
+    </>
   );
 }
