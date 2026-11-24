@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/ui";
 import { Gallery } from "@/components/Gallery";
 import { influencers, influencerCategories } from "@/data/influencers";
 
-export const metadata: Metadata = { title: "Influencers" };
+export const metadata: Metadata = { title: "Touched" };
 
 export default function InfluencersPage() {
   return (
