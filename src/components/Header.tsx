@@ -45,8 +45,8 @@ export function Header() {
       <div className="container-x flex h-20 items-center justify-between gap-6">
         <Logo />
 
-        <nav aria-label="Primary" className="hidden md:block">
-          <ul className="flex items-center gap-9">
+        <nav aria-label="Primary" className="hidden lg:block">
+          <ul className="flex items-center gap-6 xl:gap-9">
             {nav.map((item) => (
               <li key={item.href}>
                 <Link
@@ -87,7 +87,7 @@ export function Header() {
 
           <button
             type="button"
-            className="-mr-2 p-2 md:hidden"
+            className="-mr-2 p-2 lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="mobile-menu"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -107,9 +107,9 @@ export function Header() {
       <div
         id="mobile-menu"
         hidden={!menuOpen}
-        className="fixed inset-x-0 bottom-0 top-20 z-40 overflow-y-auto bg-cream md:hidden"
+        className="fixed inset-x-0 bottom-0 top-20 z-40 overflow-y-auto bg-cream lg:hidden"
       >
-        <nav aria-label="Mobile" className="container-x py-10">
+        <nav aria-label="Mobile" className="container-x py-6">
           <ul className="space-y-1">
             {nav.map((item, i) => (
               <li key={item.href} className="animate-fade-up" style={{ animationDelay: `${i * 50}ms` }}>
@@ -117,7 +117,7 @@ export function Header() {
                   href={item.href}
                   aria-current={isActive(item.href) ? "page" : undefined}
                   onClick={() => setMenuOpen(false)}
-                  className="flex items-baseline justify-between border-b border-line py-5 font-display text-4xl"
+                  className="flex items-baseline justify-between border-b border-line py-4 font-display text-[2.1rem] leading-tight"
                 >
                   {item.label}
                   <span aria-hidden className="text-sm text-muted">→</span>
@@ -125,7 +125,7 @@ export function Header() {
               </li>
             ))}
           </ul>
-          <Link href="/booking" onClick={() => setMenuOpen(false)} className="btn-primary mt-10 w-full">
+          <Link href="/booking" onClick={() => setMenuOpen(false)} className="btn-primary mt-8 w-full">
             Book an appointment
           </Link>
         </nav>

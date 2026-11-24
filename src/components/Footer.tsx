@@ -9,6 +9,7 @@ const cols = [
       { href: "/shop", label: "Shop" },
       { href: "/services", label: "Services" },
       { href: "/portfolio", label: "Portfolio" },
+      { href: "/influencers", label: "Influencers" },
     ],
   },
   {

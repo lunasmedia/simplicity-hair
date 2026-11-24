@@ -2,16 +2,17 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { portfolio, portfolioCategories, type PortfolioCategory } from "@/data/portfolio";
+import type { PortfolioItem } from "@/data/portfolio";
 import { SmartImage } from "@/components/SmartImage";
 import { Chip } from "@/components/ui";
 import { site } from "@/data/site";
 
-export function PortfolioGallery() {
-  const [cat, setCat] = useState<PortfolioCategory | "All">("All");
+/** Filterable photo gallery with a pop-up viewer. Used by Portfolio and Influencers. */
+export function Gallery({ items, categories }: { items: PortfolioItem[]; categories: string[] }) {
+  const [cat, setCat] = useState<string>("All");
   const [open, setOpen] = useState<number | null>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
-  const list = cat === "All" ? portfolio : portfolio.filter((p) => p.category === cat);
+  const list = cat === "All" ? items : items.filter((p) => p.category === cat);
 
   useEffect(() => {
     if (open === null) return;
@@ -34,7 +35,7 @@ export function PortfolioGallery() {
   return (
     <section className="container-x py-14">
       <div className="mb-10 flex flex-wrap gap-2" role="group" aria-label="Filter portfolio">
-        {(["All", ...portfolioCategories] as const).map((c) => (
+        {["All", ...categories].map((c) => (
           <Chip key={c} active={cat === c} onClick={() => setCat(c)}>
             {c}
           </Chip>
