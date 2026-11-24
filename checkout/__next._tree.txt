@@ -1,0 +1,6 @@
+:HL["/simplicity-hair/_next/static/chunks/3edkvho-5pld9.css","style"]
+:HC["/",""]
+:HL["/simplicity-hair/images/logo-mark.webp","image"]
+2:[["children",{"s":"__PAGE__","h":160}]]
+1:[["children",{"s":"checkout","h":96,"c":"$Q2"}]]
+0:{"b":"2-V3Vnhqh-tttro6eBxVQ","t":{"t":{"s":"","h":80,"c":"$Q1"}}}
