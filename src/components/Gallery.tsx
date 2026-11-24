@@ -7,6 +7,46 @@ import { SmartImage } from "@/components/SmartImage";
 import { Chip } from "@/components/ui";
 import { site } from "@/data/site";
 
+const tileShape = (i: number) => (i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-square" : "aspect-[4/5]");
+
+/** Muted, looping tile video that only loads and plays while it's on screen. */
+function TileVideo({ src, poster, className }: { src: string; poster: string; className: string }) {
+  const ref = useRef<HTMLVideoElement>(null);
+  const [near, setNear] = useState(false);
+  useEffect(() => {
+    const v = ref.current;
+    if (!v) return;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        if (e.isIntersecting) {
+          setNear(true);
+          if (!reduce) v.play().catch(() => {});
+        } else v.pause();
+      },
+      { threshold: 0.25 }
+    );
+    io.observe(v);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <video
+      ref={ref}
+      src={src}
+      poster={poster}
+      muted
+      loop
+      playsInline
+      preload={near ? "auto" : "none"}
+      aria-hidden
+      controlsList="nodownload"
+      disablePictureInPicture
+      disableRemotePlayback
+      className={className}
+    />
+  );
+}
+
 /** Filterable photo gallery with a pop-up viewer. Used by Portfolio and Influencers. */
 export function Gallery({ items, categories }: { items: PortfolioItem[]; categories: string[] }) {
   const [cat, setCat] = useState<string>("All");
@@ -45,12 +85,25 @@ export function Gallery({ items, categories }: { items: PortfolioItem[]; categor
       <ul className="columns-2 gap-4 md:columns-3 [&>li]:mb-4">
         {list.map((item, i) => (
           <li key={item.id} className="break-inside-avoid">
-            <button type="button" onClick={() => setOpen(i)} className="group relative block w-full overflow-hidden text-left" aria-label={`View ${item.title}`}>
-              <SmartImage
-                src={item.image}
-                alt={item.caption}
-                className={`w-full object-top transition-transform duration-700 group-hover:scale-[1.03] ${i % 3 === 0 ? "aspect-[3/4]" : i % 3 === 1 ? "aspect-square" : "aspect-[4/5]"}`}
-              />
+            <button type="button" onClick={() => setOpen(i)} className="group relative block w-full overflow-hidden text-left" aria-label={`${item.video ? "Play" : "View"} ${item.title}`}>
+              {item.video ? (
+                <TileVideo
+                  src={item.video}
+                  poster={item.image}
+                  className={`w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03] ${tileShape(i)}`}
+                />
+              ) : (
+                <SmartImage
+                  src={item.image}
+                  alt={item.caption}
+                  className={`w-full object-top transition-transform duration-700 group-hover:scale-[1.03] ${tileShape(i)}`}
+                />
+              )}
+              {item.video && (
+                <span aria-hidden className="absolute right-3 top-3 flex h-7 w-7 items-center justify-center rounded-full bg-night/55 text-ivory">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4v16l13-8z" /></svg>
+                </span>
+              )}
               <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-night/70 to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100">
                 <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-ivory/75">{item.category}</span>
                 <span className="block font-display text-xl text-ivory">{item.title}</span>
@@ -76,7 +129,23 @@ export function Gallery({ items, categories }: { items: PortfolioItem[]; categor
         <div role="dialog" aria-modal="true" aria-label={current.title} className="fixed inset-0 z-50 flex items-center justify-center bg-night/90 p-4 animate-fade-up">
           <button type="button" className="absolute inset-0 cursor-default" aria-hidden tabIndex={-1} onClick={() => setOpen(null)} />
           <figure className="relative z-10 flex max-h-full max-w-full flex-col items-center">
-            <SmartImage src={current.image} alt={current.caption} eager className="block h-auto max-h-[78vh] w-auto max-w-[calc(100vw-6rem)] bg-transparent object-contain" />
+            {current.video ? (
+              <video
+                key={current.video}
+                src={current.video}
+                poster={current.image}
+                controls
+                autoPlay
+                playsInline
+                controlsList="nodownload noplaybackrate"
+                disablePictureInPicture
+                disableRemotePlayback
+                aria-label={current.caption}
+                className="block h-auto max-h-[78vh] w-auto max-w-[calc(100vw-6rem)] bg-night"
+              />
+            ) : (
+              <SmartImage src={current.image} alt={current.caption} eager className="block h-auto max-h-[78vh] w-auto max-w-[calc(100vw-6rem)] bg-transparent object-contain" />
+            )}
             <figcaption className="mt-4 flex w-full max-w-2xl flex-col gap-1 text-ivory sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
               <span>
                 <span className="block text-[0.62rem] uppercase tracking-[0.2em] text-ivory/60">{current.category}</span>

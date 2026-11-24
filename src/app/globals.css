@@ -71,7 +71,7 @@ select,
   -webkit-touch-callout: default;
 }
 img,
-video {
+video:not([controls]) {
   -webkit-user-drag: none;
   user-drag: none;
   pointer-events: none;

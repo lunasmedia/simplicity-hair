@@ -8,8 +8,9 @@ export type PortfolioItem = {
   id: string;
   title: string;
   category: PortfolioCategory;
-  image: string;
+  image: string; // photo, or the cover image when `video` is set
   caption: string;
+  video?: string; // optional: show this video instead of the photo
 };
 
 export const portfolio: PortfolioItem[] = [
